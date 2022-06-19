@@ -30,9 +30,9 @@ steps:
       ]
 
 substitutions:
-  _REGION: [YOUR REGION ]
-  _SERVICE_NAME: [YOUR SERVICE]
-  _INSTANCE_NAME: [CLOUD SQL INSTANCE NAME]
+  _REGION: asia-southeast1
+  _SERVICE_NAME: rottenpotatoes
+  _INSTANCE_NAME: inst1
 
 images:
   - "gcr.io/${PROJECT_ID}/${_SERVICE_NAME}"
