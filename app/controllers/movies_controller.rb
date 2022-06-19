@@ -20,6 +20,10 @@ class MoviesController < ApplicationController
       @ratings_to_show_hash = params[:ratings]
       @movies = @movies.where(:rating => @ratings_to_show_hash.keys)
       session[:ratings] = @ratings_to_show_hash
+    else
+      @ratings_to_show_hash = Hash[*@all_ratings.map {|key| [key, 1]}.flatten]
+      @movies = @movies.where(:rating => @ratings_to_show_hash.keys)
+      session[:ratings] = @ratings_to_show_hash
     end
     
     if (params[:sort] != nil)
